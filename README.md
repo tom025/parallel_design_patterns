@@ -9,9 +9,11 @@ The original java version is [here](https://github.com/balopat/Parallel-Design-P
 This exercise repo uses ruby 1.9.2. For rvm users, a `.rvmrc` file has been added that will
 setup a new gemset and a make sure 1.9.2 is installed.
 
-Make sure bundle is installed
+Make sure bundler is installed
 
-    bundle install
+    gem install bundler
+
+Then do a `bundle install`.
 
 This will install rspec and a few other necessary gems.
 
