@@ -1,23 +1,23 @@
 # README
 
-This is the ruby version of the parallel disgn patterns created by [balopat](https://github.com/balopat)
+This is the ruby version of the parallel disgn patterns created by [balopat](https://github.com/balopat).
 
-The original java version is [here](https://github.com/balopat/Parallel-Design-Patterns)
+The original java version is [here](https://github.com/balopat/Parallel-Design-Patterns).
 
 ## Getting started
 
 This exercise repo uses ruby 1.9.2. For rvm users, a `.rvmrc` file has been added that will
 setup a new gemset and a make sure 1.9.2 is installed.
 
-Make sure bundler is installed
+Make sure bundler is installed...
 
     gem install bundler
 
 Then do a `bundle install`.
 
-This will install rspec and a few other necessary gems.
+This will install rspec and a few other necessary gems dependancies.
 
-Next run `rake` to run the tests.
+Next run `rspec` to run the tests.
 
 ## The Original README
 ### Introduction
