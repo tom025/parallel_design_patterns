@@ -1,3 +1,4 @@
+require 'timeout'
 require_relative '../lib/min_value_finder'
 
 describe MinValueFinder do
@@ -10,7 +11,7 @@ describe MinValueFinder do
     ->(x) do
       begin
         sleep 200
-      rescue InterruptedException => e
+      rescue Timeout::Error => e
         raise e
       end
       -x
@@ -34,7 +35,9 @@ describe MinValueFinder do
   end
 
   it 'completes slow calculations in time' do
-    MinValueFinder.new(slow_neg).min_on(0..10).should == 10
+    Timeout.timeout(1000) do
+      MinValueFinder.new(slow_neg).min_on(0..10).should == -10
+    end
   end
 end
 
