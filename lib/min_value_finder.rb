@@ -4,6 +4,8 @@ class MinValueFinder
   end
 
   def min_on(range)
-    #some code should go here!!!
+    range.inject([]) do |results, value|
+      results << Thread.new { @function.call(value) }
+    end.map(&:value).min
   end
 end
