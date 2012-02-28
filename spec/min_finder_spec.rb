@@ -26,7 +26,7 @@ describe MinValueFinder do
   end
 
   it 'completes slow calculations in time' do
-    Timeout.timeout(0.8) do
+    Timeout.timeout(5) do
       MinValueFinder.new(slow_neg).min_on(0..10).should == -10
     end
   end
