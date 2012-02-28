@@ -7,7 +7,7 @@ describe MinValueFinder do
 
   let(:neg) { ->(x) { -x } }
 
-  let(:slow_neg) { ->(x) { sleep 1; -x } }
+  let(:slow_neg) { ->(x) { sleep 2; -x } }
 
   it 'returns the correct value for a range of one element' do
     MinValueFinder.new(square).min_on(-2..-2).should == 4
@@ -29,6 +29,10 @@ describe MinValueFinder do
     Timeout.timeout(0.8) do
       MinValueFinder.new(slow_neg).min_on(0..10).should == -10
     end
+  end
+
+  it 'handles large problems' do
+    MinValueFinder.new(slow_neg).min_on(0..6000).should == -6000
   end
 end
 
