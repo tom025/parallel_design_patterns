@@ -13,8 +13,8 @@ describe MinValueFinder do
     MinValueFinder.new(square).min_on(-2..-2).should == 4
   end
 
-  it 'finds the minimum result for the square function on the range 2 to 5' do
-    MinValueFinder.new(square).min_on(2..5).should == 4
+  it 'finds the minimum result for the square function on the range 3 to 5' do
+    MinValueFinder.new(square).min_on(3..5).should == 9
   end
 
   it 'finds the minimum result for the square funcition on the range -4 to 10' do
